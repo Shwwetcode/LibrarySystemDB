@@ -13,8 +13,10 @@ public class Main {
             System.out.println("2. Register Member");
             System.out.println("3. Borrow Book");
             System.out.println("4. Return Book");
-
             System.out.println("5. View Borrow Records");
+            System.out.println("6. List All Books");
+            System.out.println("7. List All Members");
+            System.out.println("8. Search Books");
             System.out.println("0. Exit");
             System.out.print("Choose an option: ");
             String choice = scanner.nextLine();
@@ -66,9 +68,21 @@ case "4": {
     BorrowRecord.returnBook(memberId, isbn);
     break;
 }
-case "5": {
+    case "5": {
     System.out.println("=== Borrow Records ===");
     BorrowRecord.viewAllRecords();
+    break;
+}
+    case "6":
+    Book.listAllBooks();
+    break;
+    case "7":
+    Member.listAllMembers();
+    break;
+    case "8": {
+    System.out.print("Enter keyword (title or ISBN): ");
+    String keyword = scanner.nextLine();
+    Book.searchBooks(keyword);
     break;
 }
 
